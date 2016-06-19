@@ -12,7 +12,7 @@ Curly brackes on next line
 
 }
 
-No shortening what so ever
+No shortening whatsoever
 
 Describe the functionality of classes and functions togheter with the documentation
 /**
