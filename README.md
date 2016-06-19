@@ -7,6 +7,7 @@ Commenting language: ENGLISH
 Variable, objects, classes, functions naming language: ENGLISH
 
 Curly brackes on next line
+
 {
 
 }
