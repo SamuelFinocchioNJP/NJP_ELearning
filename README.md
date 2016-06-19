@@ -15,9 +15,8 @@ Curly brackes on next line
 No shortening whatsoever
 
 Describe the functionality of classes and functions togheter with the documentation
-/**
+
  *  class/function name
  *  @author Author name
  *  @other parameters 
  *  Description
- */
