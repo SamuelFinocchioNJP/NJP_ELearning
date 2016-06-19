@@ -1,0 +1,83 @@
+<section>
+    <!-- Creating course modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <div class="input-field col s8">
+                      <input id="title" type="text" data-ng-model="newCourse.title" class="validate">
+                      <label for="first_name">Title</label>
+                </div>
+                    
+                <div input-field class="col s4">
+                    <select data-ng-model="newCourse.difficulty" material-select watch>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                    
+                <div class="input-field col s10 offset-s1">
+                    <input id="url" type="text" data-ng-model="newCourse.description" class="validate">
+                    <label for="last_name">Description</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a data-ng-click="createCourse()" class="modal-action modal-close waves-effect waves-green btn-flat">Create course</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <a class='btn right' style="margin-right: 50px" href='#demoModal' modal>New course</a>
+    </div>
+    
+    <br> <br>
+    <p class="flow-text center">My courses</p>
+    
+    <ul class="collapsible popout" data-collapsible="accordion" watch>
+        <li data-ng-repeat="course in Courses" data-ng-click="getCourseContent(course.id_course)">
+            <div class="collapsible-header">
+                <i class="material-icons circle">polymer</i>
+                {{course.title}}
+            </div>
+            
+            <div class="collapsible-body">
+                <div class="row">
+                    <div class="input-field col s8">
+                      <input id="title" type="text" data-ng-model="newContent.title" class="validate">
+                      <label for="first_name">Title</label>
+                    </div>
+                    
+                    <div input-field class="col s4">
+                        <select data-ng-model="newContent.type" material-select watch>
+                            <option value="video">video</option>
+                            <option value="document">document</option>
+                            <option value="exercise">exercise</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-field col s10 offset-s1">
+                      <input id="url" type="text" data-ng-model="newContent.url" class="validate">
+                      <label for="last_name">Url</label>
+                    </div>
+                    
+                    <a class="waves-effect waves-light btn right" style="margin-top:30px" data-ng-click="addContent(course.id_course)">ADD CONTENT</a>
+                 </div>
+            </div>
+        </li>
+    </ul>
+    
+    <div id="content">
+        <ul class="collection">
+            <li class="collection-item" data-ng-repeat="element in Content" >
+              <div data-ng-if="element.title">
+                  {{element.title}}
+                  <a class="secondary-content">
+                      <i data-ng-click="deleteContent(element.id_content, course.id_course)" class="material-icons">delete</i>
+                  </a>
+              </div>
+            </li>
+        </ul>
+    </div>
+    
+    
+</section>

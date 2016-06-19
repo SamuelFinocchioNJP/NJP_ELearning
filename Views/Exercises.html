@@ -1,0 +1,37 @@
+<div>
+    <div class="container">
+        <div class="input-field col s6 right">
+          <input data-ng-model="searchText"  id="Search" type="text" class="validate">
+          <label for="first_name">Search</label>
+        </div>
+    </div>
+    <br> <br> <br> <br>
+    <p class="flow-text center">{{courseName}}</p>
+    <ul class="collection">
+        <li class="collection-item avatar" data-ng-repeat="element in Content | filter:searchText">
+            <i class="material-icons circle">polymer</i>
+            <span class="title">{{element.title}}</span>
+            <p>{{element.type}}</p>
+            <a href="{{element.url}}">Go to {{element.type}} - {{element.title}}</a>
+            <br> <br>
+            <div class="container video-medium left">
+                <p data-ng-if="element.type == 'video'">
+                    <div class="video-container">
+                        <iframe src="{{element.url}}" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                  </div>
+                </p>
+            </div>
+
+            <p data-ng-if="!element.type == 'video'">
+                <a href="{{element.url}}">Vai a {{element.type}} - {{element.title}}</a>
+            </p>
+ 
+            <a href="{{element.url}}" class="secondary-content">
+                <i data-ng-if="element.type == 'video'   " class="material-icons">theaters</i>
+                <i data-ng-if="element.type == 'document'" class="material-icons">library_books</i> 
+                <i data-ng-if="element.type == 'exercise'" class="material-icons">assignment</i>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,25 @@
+<div>
+    <div class="container">
+        <div class="input-field col s6 right">
+          <input data-ng-model="searchText"  id="Search" type="text" class="validate">
+          <label for="first_name">Search</label>
+        </div>
+        
+        
+    </div>
+    
+    <br> <br> <br>
+    
+    <p class="flow-text center">Courses</p>
+    <ul class="collection">
+        <li class="collection-item avatar" data-ng-repeat="course in Courses | filter:searchText">
+            <i class="material-icons circle">polymer</i>
+            <span class="title">{{course.title}}</span>
+            <p>Author: {{course.username}}</p>
+            <p>
+                {{course.description}}
+            </p>
+            <a data-ng-click="selectCourse(course.id_course, course.title)" class="secondary-content"><i class="material-icons">input</i></a>
+        </li>
+    </ul>
+</div>
