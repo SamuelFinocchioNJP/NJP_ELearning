@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS Own (
 
 -- Registration
 INSERT INTO User (username, name, surname, email, password)
-    VALUES ('InformaticageNJP', 'Samuel', 'Finocchio', 'samuelfinocchioit@gmail.com', 'b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3');
+    VALUES ('Username', 'name', 'surname', 'email@example.com', 'b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3');
 
 -- Getting content of a course
 SELECT Content.id_content,Content.title, Content.url, Content.type 
